@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	// 练习1：统计班级学生就业薪资，计算总薪资 和 平均薪资。
+		function getSum(array) {
+			var sum=0;
+			for (var i = 0; i < array.length; i++) {
+				sum+=array[i];
+			}
+			return sum;
+		}
+		var array=[10000,12000,14000,20000,8000];
+		console.log(getSum(array));
+		console.log(getSum(array)/array.length);
+
+		// - 练习2：统计班级学生就业薪资，计算薪资超过15000的人的个数。【作业】
+		function getNum(array2){
+			var num=0;//接收个数
+			for (var i = 0; i < array2.length; i++) {
+				if (array2[i]>15000) {
+					num++;
+				}
+			}
+			return num;
+		}
+		var array2=[10000,12000,14000,20000,8000];
+		console.log(getNum(array2));
+		// - 练习3：给一个不重复的数字数组，求最大值和最大值的在数组中的位置
+		function getMax(array3){
+			var max=array3[0];
+			for (var i = 0; i < array3.length; i++) {
+				if (array3[i]<array3[i+1]) {
+                    max=array3[i+1];
+				}
+			}
+			console.log(max);
+			var maxIndex=0;
+			for (var j = 0; j < array3.length; j++) {
+				if (array3[j]<array3[j+1]) {
+                    max=array3[j+1];
+                    maxIndex=j+2;
+				}
+			}
+			console.log(maxIndex);
+		}
+		var array3=[10000,12000,14000,20000,8000];
+		getMax(array3);
+		// - 练习4：给一个不重复的数字数组，求最小值和最小值的在数组中的位置【作业】
+		function getMin(array4){
+			var min=array4[0];
+			for (var i = 0; i < array4.length; i++) {
+				if (array4[i]>array4[i+1]) {
+					min=array4[i+1];
+				}
+			}
+			console.log(min);
+			var minIndex=0;
+			for (var i = 0; i < array4.length; i++) {
+				if (array4[i]>array4[i+1]) {
+					minIndex=i+2;
+				}
+			}
+			console.log(minIndex);
+		}
+		var array4=[10000,12000,14000,20000,8000];
+		getMin(array4);
+		// - 练习5：给一个字符串数组，将数组中的每一个数据拼接在一起，每个数据之间用 | 符合拼接。 如： ‘张三|李四|王五’
+		function getStr(array5){
+			var str='';
+			for (var i = 0; i < array5.length; i++) {
+				if (i>=0&&i<=array5.length-1) {
+					str=str+array5[i]+'|';
+				}else{
+					str=str+array5[i];
+				}
+			}
+			return str;
+		}
+		var array5=['张三','李四','王五','赵柳'];
+		console.log(getStr(array5));
+		// - 练习6：给一个数字数组，该数组中有很多数字0，将不为0的数据存入到一个新的数组中【作业】
+		function getNewArray(array6){
+			var arr=[];
+			for (var i = 0; i < array6.length; i++) {
+				if (array6[i]!=0) {
+					arr[arr.length]=array6[i];
+				}
+			}
+			return arr;
+		}
+		var array6=[0,2,5,0,7,0,1];
+		console.log(getNewArray(array6));
+		// - 练习7：给一个数组，将数组中的数据反转，存放到一个新的数组中。
+
+			// function getScroll(array7){
+			// 	for (var i = 0; i < array7.length/2; i++) {
+			// 		var temp=array7[i];
+			// 		array7[i]=array7[array7.length-1-i];
+			// 		array7[array7.length-1-i]=temp;
+			// 	}
+			// 	return array7;
+			// }
+			// var array7=[0,2,5,0,7,0,1];
+			// console.log(getScroll(array7));
+
+			function getScroll(array7){
+				for (var i = 0; i < 1; i++) {
+					var temp=array7[i];
+					array7[i]=array7[array7.length-1-i];
+					array7[array7.length-1-i]=temp;
+				}
+				return array7;
+			}
+			var array7=[0,2,5,0,7,0,1];
+			console.log(getScroll(array7));
+
+
+
+
+		// - 练习8：给一组数字数组，将该数组中的数据排序（按照从小到大的规则） 冒泡排序
+
+		function getMp(array8){
+			for (var i = 0; i < array8.length-1; i++) {
+				for (var j = 0; j < array8.length-1-i; j++) {
+					if (array8[j]>array8[j+1]) {
+						var temp=array8[j];
+						array8[j]=array8[j+1];
+						array8[j+1]=temp;
+					}
+					
+				}
+			}
+			return array8;
+		}
+		var array8=[0,2,5,0,7,0,1];
+		console.log(getMp(array8));
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
